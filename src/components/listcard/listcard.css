@@ -1,0 +1,28 @@
+.task {
+    background-color: bisque;
+    padding: 2rem;
+    border: 1rem solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task__status{
+    font-size: 2rem;
+}
+
+.task__title{
+   color:black;
+   font-weight: bold;
+   font-size: 1.5rem;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   margin-top: 0rem;
+}
+
+.task__button{
+    background-color: chocolate;
+    padding: 0.5rem;
+    border: .3rem solid;
+    border-radius: 100%;
+}
