@@ -6,12 +6,7 @@ const Layout = ({ children }) => {
     return (
         <div className=''>
             <Navbar />
-            <div className='flex h-[calc(100vh_-_3rem)]'>
-                <Menu />
-                <div className='bg-slate-400 w-full overflow-auto ' >
-                    {children}
-                </div>
-            </div>
+            {children}
         </div>
     )
 }
