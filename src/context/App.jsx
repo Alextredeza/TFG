@@ -1,4 +1,5 @@
 import { createContext, useState } from 'react'
+import { useLocalStorage } from '../hooks/useLocalStorage'
 
 const data = [
     {
@@ -31,12 +32,15 @@ const AppContext = createContext()
 
 const AppProvaider = ({ children }) => {
 
+    const {
+        data: dataLocalStorage,
+        saveData: saveLocalStorage,
+    } = useLocalStorage('cartStore', [])
+
     const [cards, setCards] = useState(data)
     const [filters, setFilters] = useState([])
-    const [cardStore, setCardStore] = useState([])
 
     const filter = (filter) => {
-        // filter = {type: 'brand', value: 'TZURU'} || {type: 'price', value: 1000}
         const newCards = cards.filter(card => card[filter.type] == filter.value)
         setFilters(newCards)
     }
@@ -46,12 +50,12 @@ const AppProvaider = ({ children }) => {
     }
 
     const addCardStore = (card) => {
-        setCardStore([...cardStore, card])
+        saveLocalStorage([...dataLocalStorage, {...card, uuid: Date.now() }])
     }
 
     const removeCardStore = (id) => {
-        const newCardStore = cardStore.filter(card => card.id !== id)
-        setCardStore(newCardStore)
+        const newCardStore = dataLocalStorage.filter(card => card.uuid !== id)
+        saveLocalStorage(newCardStore)
     }
 
     const values = {
@@ -61,6 +65,7 @@ const AppProvaider = ({ children }) => {
         clearFilter,
         addCardStore,
         removeCardStore,
+        dataLocalStorage,
     }
 
     return (

@@ -5,6 +5,7 @@ import Historia from "./pages/Config/Historia"
 import Licencias from "./pages/Config/Licencias"
 import Cookies from "./pages/Config/Cookies"
 import Ajustes from "./pages/Config/Ajustes"
+import Carrito from "./pages/Carrito"
 
 function App() {
   return(
@@ -15,6 +16,7 @@ function App() {
           <Route path="config/licencias" element={<Licencias />}/>
           <Route path="config/ajustes" element={<Ajustes />}/>
           <Route path="config/cookies" element={<Cookies />}/>
+          <Route path="carrito" element={<Carrito />}/>
     </Routes>
   )
   

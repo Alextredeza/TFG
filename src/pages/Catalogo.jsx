@@ -5,7 +5,7 @@ import Menu from '../components/Layouts/Menu'
 import { useApp } from '../hooks/useApp'
 
 function Catalogo() {
-  const { cards, filter, filters } = useApp()
+  const { cards, filter, filters, addCardStore } = useApp()
 
   return (
     <Layout>
@@ -28,7 +28,11 @@ function Catalogo() {
                   <p className='font-bold text-xl' >{item.model}</p>
                   <p className='text-sm' >{item.brand}</p>
                   <p className='text-red-500 text-2xl font-bold' >€ {item.price}</p>
-                  <p className='text-sm' >Añadir carrito de compra</p>
+                  <p className='text-sm cursor-pointer hover:text-red-500'
+                    onClick={() => {
+                      addCardStore(item)
+                    }}
+                  >Añadir carrito de compra</p>
                 </div>
               </div>
             })}
@@ -40,7 +44,11 @@ function Catalogo() {
                   <p className='font-bold text-xl' >{item.model}</p>
                   <p className='text-sm' >{item.brand}</p>
                   <p className='text-red-500 text-2xl font-bold' >€ {item.price}</p>
-                  <p className='text-sm' >Añadir carrito de compra</p>
+                  <p className='text-sm cursor-pointer hover:text-red-500'
+                    onClick={() => {
+                      addCardStore(item)
+                    }}
+                  >Añadir carrito de compra</p>
                 </div>
               </div>
             })}
