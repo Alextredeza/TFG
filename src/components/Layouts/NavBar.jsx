@@ -1,36 +1,42 @@
+import { Link } from "react-router-dom"
+
 const Navbar = () => {
 
     let menu = [
-        { name: 'Operaciones', path: '/', subMenu:[{ name: 'Compras', path: '/iniciarsesion' }] [{ name: 'Ventas', path: '/iniciarsesion' }] },
+        { 
+            name: 'Operaciones', 
+            path: '/', 
+            subMenu:[{ name: 'Compras', path: '/iniciarsesion' }, { name: 'Ventas', path: '/iniciarsesion' }] 
+        },
         { name: 'Iniciar Sesion', path: '/iniciarsesion' },
         { name: 'Curiosidades', path: '/curiosidades' },
         { name: 'Carrito', path: '/carrito' },
-        { name: 'Configuración', path: '/configuracion' },
+        { name: 'Configuración', subMenu:[{ name: 'Compras', path: '/iniciarsesion' }, { name: 'Ventas', path: '/iniciarsesion' }] },
     ]
 
     return (
-        <nav className='bg-cyan-400 h-12 flex items-center justify-around'>
-            <div className="h-full py-1">
+        <nav className='bg-paletter-blue shadow-md h-[4rem] flex items-center justify-around text-white'>
+            <Link to='/' className="h-full py-1">
                 <img
-                    src="https://img2.freepng.es/20180224/rye/kisspng-sports-car-logo-auto-racing-vector-sports-car-car-wire-frame-png-picture-5a90fc321336a5.2878361915194511860787.jpg"
+                    src="logo2.png"
                     alt="logo de la empresa"
                     className="h-full"
                 />
-            </div>
+            </Link>
             <div className="flex gap-6">
                 {menu.map((item, index) => {
-                    return <div key={index} >
+                    return <Link to={item.path} className="relative group cursor-pointer" key={index} >
                         {item.name}
                         {item.subMenu && 
-                        <div className="flex flex-col gap-2">
+                        <div className="absolute bg-paletter-gray/50 p-2 w-full rounded-md flex-col gap-1 hidden group-hover:flex">
                             {item.subMenu.map((subItem, subIndex) => {
-                                return <div key={subIndex}>
+                                return <Link to={subItem.path} key={subIndex} className='hover:opacity-50 cursor-pointer'>
                                     {subItem.name}
-                                </div>
+                                </Link>
                             })}
                         </div>
                         }
-                    </div>
+                    </Link>
                 })}
             </div>
         </nav>

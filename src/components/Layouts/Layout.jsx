@@ -4,7 +4,7 @@ import Menu from './Menu'
 
 const Layout = ({ children }) => {
     return (
-        <div className=''>
+        <div>
             <Navbar />
             {children}
         </div>

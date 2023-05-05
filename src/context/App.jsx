@@ -4,27 +4,59 @@ import { useLocalStorage } from '../hooks/useLocalStorage'
 const data = [
     {
         id: 1,
-        model: 'Titulo de la pagina',
-        brand: 'TZURU',
-        price: 2000,
-        img: 'https://picsum.photos/250/100',
-        bg: 'bg-gray-100'
+        model: 'Civic Type R',
+        brand: 'Honda',
+        price:  500000,
+        img: 'https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2016/09/honda-civic-type-r-ek9.jpg?itok=OIHzMWds',
     },
     {
         id: 2,
         model: 'Titulo de la pagina',
         brand: 'KAMERR',
-        price: 5000,
+        price: 50,
         img: 'https://picsum.photos/250/100',
-        bg: 'bg-gray-100'
     },
     {
         id: 3,
         model: 'a',
         brand: 'BRUH',
-        price: 500,
+        price: 150000,
         img: 'https://picsum.photos/250/100',
-        bg: 'bg-gray-100'
+    },
+    {
+        id: 4,
+        model: 'a',
+        brand: 'BRUH',
+        price: 150000,
+        img: 'https://picsum.photos/250/100',
+    },
+    {
+        id: 4,
+        model: 'a',
+        brand: 'BRUH',
+        price: 150000,
+        img: 'https://picsum.photos/250/100',
+    },
+    {
+        id: 4,
+        model: 'a',
+        brand: 'BRUH',
+        price: 150000,
+        img: 'https://picsum.photos/250/100',
+    },
+    {
+        id: 4,
+        model: 'a',
+        brand: 'BRUH',
+        price: 150000,
+        img: 'https://picsum.photos/250/100',
+    },
+    {
+        id: 4,
+        model: 'a',
+        brand: 'BRUH',
+        price: 150000,
+        img: 'https://picsum.photos/250/100',
     },
 ]
 
