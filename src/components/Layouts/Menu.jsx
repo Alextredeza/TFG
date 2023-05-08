@@ -8,11 +8,16 @@ const Menu = () => {
     {
       name: 'Marca',
       submenu: [
-        { name: 'Honda', action: () => filter({ type: 'brand', value: 'Honda' }) },
+        { name: 'Honda', action: () => filter({ type: 'brand', value: 'Honda' }, ) },
+        { name: 'Nissan', action: () => filter({ type: 'brand', value: 'Nissan' }, ) },
+        { name: 'Toyota', action: () => filter({ type: 'brand', value: 'Toyota' }, ) },
+        { name: 'Mazda', action: () => filter({ type: 'brand', value: 'Mazda' }, ) },
+        { name: 'Mitsubishi', action: () => filter({ type: 'brand', value: 'Mitsubishi' }, ) },
+        { name: 'Lexus', action: () => filter({ type: 'brand', value: 'Lexus' }, ) },
       ],
     },
-    { name: 'popular', action: () => filter({ type: 'brand', value: 'Honda' }) },
-    { name: 'precios', submenu: [{ name: '€ 500', action: () => filter({ type: 'price', value: 500 }) }] },
+    { name: 'Popular', action: () => filter({ type: 'brand', value: 'Nissan' }) },
+    { name: 'precios', submenu: [{ name: '€ 10000', action: () => filter({ type: 'price', value: 10000 }) },{ name: '€ 20000', action: () => filter({ type: 'price', value: 20000 }) },{ name: '€ 30000', action: () => filter({ type: 'price', value: 30000 }) },{ name: '€ 40000', action: () => filter({ type: 'price', value: 40000 }) },{ name: '€ 50000', action: () => filter({ type: 'price', value: 50000 }) },{ name: '€ 60000', action: () => filter({ type: 'price', value: 60000 }) },{ name: '€ 85000', action: () => filter({ type: 'price', value: 85000 }) },{ name: '€ 200000', action: () => filter({ type: 'price', value: 200000 }) }] },
     { name: 'limpiar', action: () => clearFilter() },
 
   ]

@@ -6,12 +6,20 @@ const Navbar = () => {
         { 
             name: 'Operaciones', 
             path: '/', 
-            subMenu:[{ name: 'Compras', path: '/iniciarsesion' }, { name: 'Ventas', path: '/iniciarsesion' }] 
+            subMenu:[{ name: 'Comprar', path: '/comprar' }, { name: 'Vender', path: '/vender' }] 
         },
-        { name: 'Iniciar Sesion', path: '/iniciarsesion' },
-        { name: 'Curiosidades', path: '/curiosidades' },
+        { 
+            name: 'Iniciar Sesion', 
+            path: '/iniciarsesion', 
+            subMenu:[{ name: 'Iniciar sesion', path: '/iniciar' }, { name: 'Registrarse', path: '/registro' }] 
+        },
+        { 
+            name: 'Conócenos', 
+            path: '/curiosidades', 
+            subMenu:[{ name: 'Nuestra historia', path: '/aboutus/history' }, { name: 'Historial de ventas', path: '/ventas' }, { name: 'Plantilla', path: '/plantilla' }] 
+        },
         { name: 'Carrito', path: '/carrito' },
-        { name: 'Configuración', subMenu:[{ name: 'Compras', path: '/iniciarsesion' }, { name: 'Ventas', path: '/iniciarsesion' }] },
+        { name: 'Configuración', subMenu:[{ name: 'Ajustes', path: '/ajustes' }, { name: 'Cokies', path: '/iniciarsesion' }] },
     ]
 
     return (
