@@ -1,14 +1,24 @@
 import React from 'react'
 import { useApp } from '../hooks/useApp'
 import { BiX } from 'react-icons/bi'
+import Layout from '../components/Layouts/Layout'
+import { useLocalStorage } from '../hooks/useLocalStorage'
+import { useNavigate } from 'react-router-dom'
 
 function Carrito() {
 
+  const redirect = useNavigate()
+
   const { dataLocalStorage, removeCardStore } = useApp()
+  const {
+    data: shopDATA,
+    saveData: saveDATA,
+  } = useLocalStorage('shop', false)
 
-  if (dataLocalStorage.length === 0) return <p>No tienes nada en tu carrito de compras</p>
-
+  if (dataLocalStorage.length === 0) return <Layout><p className='text-white text-xl p-10'>No tienes nada en tu carrito de compras</p>
+</Layout>
   return (
+    <Layout>
     <div className='container m-auto p-3'>
       <h1>
         Carrito de compras
@@ -33,11 +43,20 @@ function Carrito() {
                 className='absolute top-0 right-0' >
                 <BiX className='font-bold text-2xl text-red-500' />
               </button>
+              <button
+                onClick={() => {
+                  saveDATA(item)
+                  redirect('/shop')
+                }}
+              >
+                Comprar
+              </button>
             </div>
           </div>
         })}
       </div>
     </div>
+    </Layout>
   )
 }
 

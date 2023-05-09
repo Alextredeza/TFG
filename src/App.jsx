@@ -6,12 +6,16 @@ import History from "./pages/AboutUs/History"
 import Cookies from "./pages/Config/Cookies"
 import Ajustes from "./pages/Config/Ajustes"
 import Carrito from "./pages/Carrito"
+import CarId from "./pages/CarId"
+import Shop from "./pages/Shop"
 
 function App() {
   return(
     <Routes>
           <Route index element={<Home />} />
           <Route path="catalogo" element={<Catalogo />}/>
+          <Route path="catalogo/:carid" element={<CarId />}/>
+          <Route path="shop" element={<Shop />}/>
           <Route path="aboutus/history" element={<History />}/>
           <Route path="config/licensess" element={<Licenses />}/>
           <Route path="config/ajustes" element={<Ajustes />}/>
