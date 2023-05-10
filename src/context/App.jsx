@@ -14,7 +14,13 @@ const data = [
         model: 'Skyline GTR R34',
         brand: 'Nissan',
         price: 200000,
+        anime: "one pice",
+        images: [
+            'https://img.remediosdigitales.com/50967d/captura-de-pantalla-2022-08-26-a-las-17.38.32/1366_2000.jpeg',
+            'https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2016/09/honda-civic-type-r-ek9.jpg?itok=OIHzMWds',
+        ],
         img: 'https://img.remediosdigitales.com/50967d/captura-de-pantalla-2022-08-26-a-las-17.38.32/1366_2000.jpeg',
+        info: 'El Nissan Skyline GT-R es un automóvil deportivo producido por el fabricante japonés Nissan, lanzado en Japón en 1969 y vendido en gran número en los mercados de exportación bajo la marca Datsun. Es uno de los automóviles más famosos, populares y emblemáticos de Japón, además de ser uno de los más representativos de la marca Nissan.',
     },
     {
         id: 3,
@@ -22,6 +28,7 @@ const data = [
         brand: 'Nissan',
         price: 100000,
         img: 'https://cochesjaponeses.es/wp-content/uploads/nissansilvias13s14s157.jpg',
+        info: 'El Nissan Silvia es un automóvil deportivo producido por el fabricante japonés Nissan desde el año 1964 hasta 2002. El nombre Silvia proviene del nombre de la diosa de la mitología griega Silvia. El Silvia fue lanzado en el año 1964, siendo el primer automóvil deportivo de Nissan. El Silvia fue fabricado en seis generaciones, la primera desde 1964 hasta 1968, la segunda desde 1974 hasta 1979, la tercera desde 1983 hasta 1988, la cuarta desde 1989 hasta 1994, la quinta desde 1999 hasta 2002 y la sexta desde 2013 hasta la actualidad.',
     },
     {
         id: 4,
@@ -106,6 +113,7 @@ const AppProvaider = ({ children }) => {
 
     const values = {
         cards,
+        setFilters,
         filters,
         filter,
         clearFilter,

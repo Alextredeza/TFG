@@ -26,7 +26,7 @@ const Navbar = () => {
         <nav className='bg-paletter-blue shadow-md h-[4rem] flex items-center justify-around text-white'>
             <Link to='/' className="h-full py-1">
                 <img
-                    src="logo2.png"
+                    src="/logo2.png"
                     alt="logo de la empresa"
                     className="h-full"
                 />

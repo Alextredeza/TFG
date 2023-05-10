@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from './NavBar'
-import Menu from './Menu'
 
 const Layout = ({ children }) => {
     return (
