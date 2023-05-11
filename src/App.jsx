@@ -8,6 +8,7 @@ import Ajustes from "./pages/Config/Ajustes"
 import Carrito from "./pages/Carrito"
 import CarId from "./pages/CarId"
 import Shop from "./pages/Shop"
+import Login from "./pages/Login"
 
 function App() {
   return(
@@ -21,6 +22,7 @@ function App() {
           <Route path="config/ajustes" element={<Ajustes />}/>
           <Route path="config/cookies" element={<Cookies />}/>
           <Route path="carrito" element={<Carrito />}/>
+          <Route path="login" element={<Login />}/>
     </Routes>
   )
   

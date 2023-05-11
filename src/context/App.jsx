@@ -14,10 +14,13 @@ const data = [
         model: 'Skyline GTR R34',
         brand: 'Nissan',
         price: 200000,
-        anime: "one pice",
+        km: '65.000',
+        year: '1989',
+        cv: '260cv',
+        modif: 'Dowpipe, Escape tramo final homologado, Llantas 18 color oro, Vinilo extra, Alerón GTR',
         images: [
             'https://img.remediosdigitales.com/50967d/captura-de-pantalla-2022-08-26-a-las-17.38.32/1366_2000.jpeg',
-            'https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2016/09/honda-civic-type-r-ek9.jpg?itok=OIHzMWds',
+            'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/image-2-6426a46bb3e23.jpg',
         ],
         img: 'https://img.remediosdigitales.com/50967d/captura-de-pantalla-2022-08-26-a-las-17.38.32/1366_2000.jpeg',
         info: 'El Nissan Skyline GT-R es un automóvil deportivo producido por el fabricante japonés Nissan, lanzado en Japón en 1969 y vendido en gran número en los mercados de exportación bajo la marca Datsun. Es uno de los automóviles más famosos, populares y emblemáticos de Japón, además de ser uno de los más representativos de la marca Nissan.',
@@ -81,6 +84,12 @@ const data = [
     },
 ]
 
+const UserLoginData = {
+    name: 'Jorge',
+    email: 'kamerr_oficial@hotmail.com',
+    password: '123456',
+}
+
 const AppContext = createContext()
 
 const AppProvaider = ({ children }) => {
@@ -111,6 +120,10 @@ const AppProvaider = ({ children }) => {
         saveLocalStorage(newCardStore)
     }
 
+    const clearCardStore = () => {
+        saveLocalStorage([])
+    }
+
     const values = {
         cards,
         setFilters,
@@ -120,6 +133,8 @@ const AppProvaider = ({ children }) => {
         addCardStore,
         removeCardStore,
         dataLocalStorage,
+        UserLoginData,
+        clearCardStore
     }
 
     return (

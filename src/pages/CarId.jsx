@@ -43,7 +43,10 @@ function CarId() {
               <li className='border-2 border-white/20 p-1'><span className='font-bold'>Año</span>: {car?.year ?? "Sin Espesificación"}</li>
               <li className='border-2 border-white/20 p-1'><span className='font-bold'>Color</span>: {car?.color ?? "Sin Espesificación"}</li>
               <li className='border-2 border-white/20 p-1'><span className='font-bold'>Precio</span>: {car?.price}</li>
-              <li className='border-2 border-white/20 p-1'><span className='font-bold'>Anime</span>: {car?.anime ?? "Sin espesificacion"}</li>
+              <li className='border-2 border-white/20 p-1'><span className='font-bold'>Kilometros</span>: {car?.km ?? "Sin espesificacion"}</li>
+              <li className='border-2 border-white/20 p-1'><span className='font-bold'>Año</span>: {car?.year ?? "Sin espesificacion"}</li>
+              <li className='border-2 border-white/20 p-1'><span className='font-bold'>Potencia</span>: {car?.cv ?? "Sin espesificacion"}</li>
+              <li className='border-2 border-white/20 p-1'><span className='font-bold'>Modificaciones</span>: {car?.modif ?? "Sin espesificacion"}</li>
             </ul>
           </div>
         </div>
