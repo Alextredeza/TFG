@@ -23,7 +23,7 @@ function CarId() {
 
   const handlerClick = () => {
     addCardStore(car)
-    window.location.href = '/carrito'
+    return <Navigate to="/carrito" state={{ from: location }} />
   }
 
   return (

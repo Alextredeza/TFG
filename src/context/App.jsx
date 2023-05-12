@@ -124,6 +124,7 @@ const AppProvaider = ({ children }) => {
         saveLocalStorage([])
     }
 
+
     const values = {
         cards,
         setFilters,
@@ -134,7 +135,7 @@ const AppProvaider = ({ children }) => {
         removeCardStore,
         dataLocalStorage,
         UserLoginData,
-        clearCardStore
+        clearCardStore,
     }
 
     return (

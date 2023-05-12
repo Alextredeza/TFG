@@ -6,7 +6,7 @@ import { useApp } from '../hooks/useApp'
 import {CardCatologo} from '../components/CardCatologo'
 
 function Catalogo() {
-  const { cards, filter, filters, addCardStore } = useApp()
+  const { cards, filters, addCardStore } = useApp()
 
   return (
     <Layout>

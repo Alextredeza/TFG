@@ -3,15 +3,14 @@ import { useApp } from '../hooks/useApp'
 import { BiX } from 'react-icons/bi'
 import Layout from '../components/Layouts/Layout'
 import { useLocalStorage } from '../hooks/useLocalStorage'
-import { useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 function Carrito() {
 
-  const redirect = useNavigate()
+  const location = useLocation()
 
   const { dataLocalStorage, removeCardStore } = useApp()
   const {
-    data: shopDATA,
     saveData: saveDATA,
   } = useLocalStorage('shop', false)
 
@@ -45,7 +44,7 @@ function Carrito() {
           className='bg-green-500 text-white rounded-md p-2 hover:bg-green-600'
           onClick={() => {
             saveDATA(dataLocalStorage)
-            window.location.href = '/shop'
+            return <Navigate to='/shop' state={{ from: location }} />
           }}
         >
           Comprar
