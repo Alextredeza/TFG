@@ -96,10 +96,14 @@ function Shop() {
 
           {current === 1 && (
             <form onSubmit={handlerSubmitSecond} className='bg-paletter-bluesecond p-3 rounded-md flex flex-col gap-4'>
-              <LabelWrape id='card' title="Numero de la tarjeta" type='text' placeholder='098 0976 876 7654 334' />
-              <LabelWrape id='month' title="Mes de expiracion" type='number' placeholder='08' />
-              <LabelWrape id='year' title="Año de expiracion" type='number' placeholder='2027' />
-              <LabelWrape id='code' title="CVC" type='number' placeholder='987' />
+              <div className='flex flex-col'>
+                <label className='font-bold text-2xl text-white/80' htmlFor="">Selecciona el consecionario</label>
+                <select name="conces" id="conces">
+                  <option value="1">Concesionario 1</option>
+                  <option value="2">Concesionario 2</option>
+                  <option value="3">Concesionario 3</option>
+                </select>
+              </div>
               <button
                 className='bg-paletter-redlight text-white font-bold py-2 px-4 rounded mt-3 inline-block cursor-pointer hover:bg-paletter-red'
               >

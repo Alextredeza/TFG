@@ -10,6 +10,8 @@ import CarId from "./pages/CarId"
 import Shop from "./pages/Shop"
 import Login from "./pages/Login"
 import Register from "./pages/register"
+import NotFound from "./pages/NotFound"
+import Sell from "./pages/Sell"
 
 function App() {
   return(
@@ -25,6 +27,8 @@ function App() {
           <Route path="carrito" element={<Carrito />}/>
           <Route path="login" element={<Login />}/>
           <Route path="register" element={<Register />}/>
+          <Route path="sell" element={<Sell />}/>
+          <Route path="*" element={<NotFound />}/>
     </Routes>
   )
   

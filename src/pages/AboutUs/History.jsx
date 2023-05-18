@@ -4,8 +4,8 @@ import Layout from '../../components/Layouts/Layout'
 function History() {
   return (
     <Layout>
-    <div className='text-white'>
-      <h1 className='font-bold text-xl bg-black '>La historia de nuestro concesionario</h1>
+    <div className='text-white container m-auto p-3'>
+      <h1 className='font-bold text-xl my-5'>La historia de nuestro concesionario</h1>
       <p>
         Nosotros somos unos jóvenes emprendedores y apasionados del motor. <br />
         Un dia decidimos darle a la gente un lugar donde poder comprar y vender vehículos Japoneses de una manera fiable y segura. <br />
@@ -16,8 +16,8 @@ function History() {
         un abrazo muy fuerte. <br /> <br />
         Atentamente: El equipo de desarollo.
       </p>
+      <img src="/logo2.png" alt="" className='w-32 mt-2' />
     </div>
-    <img src="logo2.png" alt="logo" />
    </Layout>
   )
 }
