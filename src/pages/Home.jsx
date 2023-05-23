@@ -3,18 +3,17 @@ import Layout from '../components/Layouts/Layout'
 import Card from '../components/Card'
 
 import { useApp } from '../hooks/useApp'
-import { useLocalStorage } from '../hooks/useLocalStorage'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
 
   const { cards } = useApp()
-
-  const { data, saveData } = useLocalStorage('cardStor', [])
+  const [popular, setPopular] = React.useState([])
 
   React.useEffect(() => {
-    saveData(cards)
-  }, [cards])
+    const popular = cards.filter(item => item.popular == true)
+    setPopular(popular)
+  }, [popular])
 
   return (
     <Layout>
@@ -32,7 +31,7 @@ const Home = () => {
         </div>
 
         <div class='grid grid-cols-responsive container m-auto mt-10 p-3'>
-          {cards.map((item, index) => <Card key={index} item={item} />)}
+          {popular.map((item, index) => <Card key={index} item={item} />)}
         </div>
       </div>
     </Layout>

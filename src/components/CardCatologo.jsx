@@ -23,6 +23,7 @@ const CardCatologo = ({ item, index, addCardStore }) => {
             <button className='bg-paletter-redlight/50 text-white p-2 w-fit rounded-md'
                 onClick={() => {
                     addCardStore(item)
+                    window.location.href = '/carrito'
                 }}
             ><AiOutlineShoppingCart /></button>
         </div>

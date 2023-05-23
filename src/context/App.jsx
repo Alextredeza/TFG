@@ -8,6 +8,7 @@ const data = [
         brand: 'Honda',
         price:  50000,
         img: 'https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2016/09/honda-civic-type-r-ek9.jpg?itok=OIHzMWds',
+        popular: true
     },
     {
         id: 2,
@@ -24,6 +25,7 @@ const data = [
         ],
         img: 'https://img.remediosdigitales.com/50967d/captura-de-pantalla-2022-08-26-a-las-17.38.32/1366_2000.jpeg',
         info: 'El Nissan Skyline GT-R es un automóvil deportivo producido por el fabricante japonés Nissan, lanzado en Japón en 1969 y vendido en gran número en los mercados de exportación bajo la marca Datsun. Es uno de los automóviles más famosos, populares y emblemáticos de Japón, además de ser uno de los más representativos de la marca Nissan.',
+        popular: true
     },
     {
         id: 3,
@@ -32,6 +34,7 @@ const data = [
         price: 100000,
         img: 'https://cochesjaponeses.es/wp-content/uploads/nissansilvias13s14s157.jpg',
         info: 'El Nissan Silvia es un automóvil deportivo producido por el fabricante japonés Nissan desde el año 1964 hasta 2002. El nombre Silvia proviene del nombre de la diosa de la mitología griega Silvia. El Silvia fue lanzado en el año 1964, siendo el primer automóvil deportivo de Nissan. El Silvia fue fabricado en seis generaciones, la primera desde 1964 hasta 1968, la segunda desde 1974 hasta 1979, la tercera desde 1983 hasta 1988, la cuarta desde 1989 hasta 1994, la quinta desde 1999 hasta 2002 y la sexta desde 2013 hasta la actualidad.',
+        popular: true
     },
     {
         id: 4,
@@ -39,6 +42,7 @@ const data = [
         brand: 'Toyota',
         price: 150000,
         img: 'https://cdn.motor1.com/images/mgl/PKZQL/s1/1997-toyota-supra-sold-for-176-000-at-auction.jpg',
+        popular: true
     },
     {
         id: 5,
@@ -46,6 +50,7 @@ const data = [
         brand: 'Nissan',
         price: 47000,
         img: 'https://img.remediosdigitales.com/5953b0/nissan-370z_nismo-2015-1024-02/1366_2000.jpg',
+        popular: true
     },
     {
         id: 6,
@@ -53,6 +58,7 @@ const data = [
         brand: 'Honda',
         price: 45000,
         img: 'https://www.km77.com/images/medium/7/8/7/1/med-ext-limited-edition.347871.jpg',
+        popular: true
     },
     {
         id: 7,
@@ -60,6 +66,7 @@ const data = [
         brand: 'Nissan',
         price: 150000,
         img: 'https://www.diariomotor.com/imagenes/2013/11/111942_1_5_portada.jpg',
+        popular: true
     },
     {
         id: 8,
@@ -67,6 +74,7 @@ const data = [
         brand: 'Honda',
         price: 38000,
         img: 'https://static.motor.es/fotos-noticias/2020/10/honda-accord-2021-202071809-1602589478_4.jpg',
+        popular: true
     },
     {
         id: 9,
@@ -74,6 +82,7 @@ const data = [
         brand: 'Toyota',
         price: 12000,
         img: 'https://www.cochesyconcesionarios.com/media/cache/1024w/uploads/toyota/celica/7/co/toyota-celica-01-af3d2bc95cbd5960a27c9cfef616b6e14a3a5882.jpeg',
+        popular: true
     },
     {
         id: 10,
@@ -81,6 +90,15 @@ const data = [
         brand: 'Mazda',
         price: 85000,
         img: 'https://cdn.dealeraccelerate.com/international/1/1069/48336/790x1024/2000-mazda-rx7-fd',
+        popular: true
+    },
+    {
+        id: 11,
+        model: 'RX-8',
+        brand: 'Mazda',
+        price: 85000,
+        img: 'https://cdn.dealeraccelerate.com/international/1/1069/48336/790x1024/2000-mazda-rx7-fd',
+        popular: true
     },
 ]
 
@@ -89,6 +107,14 @@ const UserLoginData = {
     email: 'kamerr_oficial@hotmail.com',
     password: '123456',
 }
+
+const Plantilla = [
+    {
+        id: 1,
+        name: "Kamerr",
+        avatar: "https://cdn.discordapp.com/avatars/403695999941345280/dfee5d302966bb203cf76ae32728caf2.webp"
+    }
+]
 
 const AppContext = createContext()
 
@@ -101,6 +127,7 @@ const AppProvaider = ({ children }) => {
 
     const [cards, setCards] = useState(data)
     const [filters, setFilters] = useState([])
+    const [staff, setStaff] = useState(Plantilla)
 
     const filter = (filter) => {
         const newCards = cards.filter(card => card[filter.type] == filter.value)
@@ -136,6 +163,7 @@ const AppProvaider = ({ children }) => {
         dataLocalStorage,
         UserLoginData,
         clearCardStore,
+        staff
     }
 
     return (
