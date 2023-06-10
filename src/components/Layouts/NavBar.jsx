@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react"
 import { Link } from "react-router-dom"
 import { useLocalStorage } from "../../hooks/useLocalStorage"
 import getGravatarURL from "../../utils/avatar"
@@ -5,10 +6,15 @@ import getGravatarURL from "../../utils/avatar"
 const Navbar = () => {
 
     const { data: login, saveData: setLogin } = useLocalStorage('loggin', false)
+    const [show, setShow] = useState(false)
+
 
     const UserWrapper = ({ user }) => {
         return (
-            <div className="relative group">
+            <div
+                onMouseEnter={() => setShow(true)}
+                onMouseLeave={() => setShow(false)}
+                onClick={() => setShow(!show)} className="relative group">
                 <div className="flex items-center gap-2">
                     <div className="h-10 w-10">
                         <img src={getGravatarURL(login.email)} alt="" className='h-full rounded-full' />
@@ -18,10 +24,10 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div>
-                    <div className="absolute bg-paletter-gray/50 p-2 w-full rounded-md flex-col gap-1 hidden group-hover:flex">
-                        <button 
-                        onClick={() => setLogin(false)}
-                        className='hover:opacity-50 cursor-pointer'>Cerrar Session</button>
+                    <div className={"absolute bg-paletter-gray/50 p-2 w-full rounded-md flex-col gap-1 " + (show ? 'flex' : 'hidden')}>
+                        <button
+                            onClick={() => setLogin(false)}
+                            className='hover:opacity-50 cursor-pointer'>Cerrar Session</button>
                         <Link to='/carrito' className='hover:opacity-50 cursor-pointer'>Carrito de compra</Link>
                     </div>
                 </div>
