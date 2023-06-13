@@ -99,9 +99,9 @@ function Shop() {
               <div className='flex flex-col'>
                 <label className='font-bold text-2xl text-white/80' htmlFor="">Selecciona el consecionario</label>
                 <select name="conces" id="conces">
-                  <option value="1">Concesionario 1</option>
-                  <option value="2">Concesionario 2</option>
-                  <option value="3">Concesionario 3</option>
+                  <option value="1">Calle benidorm (Barcelona)</option>
+                  <option value="2">Calle cuenca (Madrid)</option>
+                  <option value="3">Calle mimosas (Valencia)</option>
                 </select>
               </div>
               <button

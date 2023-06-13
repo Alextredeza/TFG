@@ -40,11 +40,12 @@ function Carrito() {
       </div>
       <div className='bg-paletter-bluesecond p-2 rounded-md text-white flex justify-between'>
         <p className='text-2xl ' ><span className='font-bold'>Total</span>: € {dataLocalStorage.reduce((acc, item) => acc + item.price, 0)}</p>
+        
         <button
           className='bg-green-500 text-white rounded-md p-2 hover:bg-green-600'
           onClick={() => {
             saveDATA(dataLocalStorage)
-            return <Navigate to='/shop' state={{ from: location }} />
+            window.location.href = '/shop' 
           }}
         >
           Comprar

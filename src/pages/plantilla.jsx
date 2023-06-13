@@ -13,7 +13,9 @@ const plantilla = () => {
                     {staff.map((item) => (
                         <div key={item.id} className='p-3 bg-palletter-blue drop-shadow-md shadow-md rounded-md w-1/4 flex flex-col items-center'>
                             <img src={item.avatar} alt="" />
-                            <p className='text-white'>{item.name}</p>
+                            <p className='text-white font-bold'>{item.name}</p>
+                            <br></br>
+                            <p className='text-white'>{item.puesto}</p>
                         </div>
                     ))}
                 </div>

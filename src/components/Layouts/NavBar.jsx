@@ -39,7 +39,7 @@ const Navbar = () => {
         {
             name: 'Operaciones',
             path: '/',
-            subMenu: [{ name: 'Comprar', path: '/comprar' }, { name: 'Vender', path: '/vender' }]
+            subMenu: [{ name: 'Comprar', path: '/catalogo' }, { name: 'Vender', path: '/sell' }]
         },
         {
             name: 'Conócenos',

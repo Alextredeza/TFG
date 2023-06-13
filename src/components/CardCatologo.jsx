@@ -14,7 +14,7 @@ const CardCatologo = ({ item, index, addCardStore }) => {
         setPrice(formatter.format(item.price))
     }, [])
 
-    return <div key={index} className='p-2 bg-paletter-bluesecond text-white rounded-md w-full flex gap-2'>
+    return <div key={index} className='p-2 bg-paletter-bluesecond text-white rounded-md w-full flex gap-2 '>
         <img src={item.img} alt="imagen de coche" className='rounded-md w-[50%]' />
         <div className='flex gap-2 flex-col'>
             <Link to={`/catalogo/${item.id}`} className='font-bold text-xl hover:opacity-50 cursor-pointer' >{item.model}</Link>

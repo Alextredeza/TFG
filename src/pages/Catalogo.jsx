@@ -15,10 +15,10 @@ function Catalogo() {
 
   return (
     <Layout>
-      <div className='flex h-[calc(100vh_-_4rem)]'>
+      <div className='flex h-[calc(100vh_-_4rem)] '>
         <Menu />
         <div className='bg-paletter-blue w-full overflow-auto ' >
-          <div className='flex justify-center my-2'>
+          <div className='flex justify-center my-2 '>
             <div className='w-1/2'>
               <input
                 type="text"

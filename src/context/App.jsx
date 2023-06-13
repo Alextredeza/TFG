@@ -96,8 +96,8 @@ const data = [
         id: 11,
         model: 'RX-8',
         brand: 'Mazda',
-        price: 85000,
-        img: 'https://cdn.dealeraccelerate.com/international/1/1069/48336/790x1024/2000-mazda-rx7-fd',
+        price: 95000,
+        img: 'https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2018/07/mazda-rx-8_5.jpg',
         popular: true
     },
 ]
@@ -111,9 +111,23 @@ const UserLoginData = {
 const Plantilla = [
     {
         id: 1,
-        name: "Kamerr",
-        avatar: "https://cdn.discordapp.com/avatars/403695999941345280/dfee5d302966bb203cf76ae32728caf2.webp"
+        name: "Alexis",
+        puesto: "Concesionario Valecia",
+        avatar: "https://i0.wp.com/www.diarlu.com/wp-content/uploads/2019/09/cara-hombre-sonriendo.jpg?resize=500%2C500&ssl=1"
+    },
+    {
+        id: 1,
+        name: "Carlos",
+        puesto: "Concesionario Madrid",
+        avatar: "https://i.pinimg.com/originals/cf/c1/d8/cfc1d8b69811d4bacb1377e39d5a74c9.jpg"
+    },
+    {
+        id: 1,
+        name: "Brad Pitt",
+        puesto: "Concesionario Barcelona",
+        avatar: "https://media.revistavanityfair.es/photos/62f3a0b80905daae61390448/1:1/w_3000,h_3000,c_limit/1412406903"
     }
+    
 ]
 
 const AppContext = createContext()
