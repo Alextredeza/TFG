@@ -20,9 +20,14 @@ const CardCatologo = ({ item, index, addCardStore }) => {
       </div>
       <div className="p-3 text-white">
         <div>
-          <p className="font-bold text-base">
-            {item.brand} {item.model}
-          </p>
+          <div className="text-base mb-2">
+            <Link
+              to={`/catalogo/${item.id}`}
+              className="font-bold hover:opacity-50 cursor-pointer"
+            >
+              {item.brand} {item.model}
+            </Link>
+          </div>
           <div className="flex gap-3 text-sm border border-white/50 rounded-sm w-fit px-2">
             <p>{item?.km} KM</p>
             <div>|</div>

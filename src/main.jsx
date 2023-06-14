@@ -1,16 +1,77 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
-import { BrowserRouter } from "react-router-dom"
+import {  createHashRouter, RouterProvider } from "react-router-dom"
 import { AppProvaider } from './context/App'
+
+// Routeres
+import Home from "./pages/Home"
+import Catalogo from "./pages/Catalogo"
+import History from "./pages/AboutUs/History"
+import Carrito from "./pages/Carrito"
+import CarId from "./pages/CarId"
+import Shop from "./pages/Shop"
+import Login from "./pages/Login"
+import Register from "./pages/register"
+import NotFound from "./pages/NotFound"
+import Sell from "./pages/Sell"
+import Plantilla from "./pages/plantilla"
+
+const router = createHashRouter([
+  {
+    path: '/',
+    element: <Home />
+  },
+  {
+    path: '/catalogo',
+    element: <Catalogo />
+  },
+  {
+    path: '/catalogo/:id',
+    element: <CarId />
+  },
+  {
+    path: '/Login',
+    element: <Login />
+  },
+  {
+    path: '/History',
+    element: <History />
+  },
+  {
+    path: '/Carrito',
+    element: <Carrito />
+  },
+  {
+    path: '/register',
+    element: <Register />
+  },
+  {
+    path: '/CarId',
+    element: <CarId />
+  },
+  {
+    path: '/NotFound',
+    element: <NotFound />
+  },
+  {
+    path: '/Sell',
+    element: <Sell />
+  },
+  {
+    path: '/plantilla',
+    element: <Plantilla />
+  },
+  {
+    path: '/Shop',
+    element: <Shop />
+  }
+])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AppProvaider >
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+    <RouterProvider router={router} />
     </AppProvaider>
   </React.StrictMode>,
 )
