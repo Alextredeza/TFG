@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useParams, Navigate, useLocation } from 'react-router-dom'
 import { useApp } from '../hooks/useApp'
 import Layout from '../components/Layouts/Layout'
@@ -11,7 +11,9 @@ import Slider from '../components/Slider'
 function CarId() {
   const location = useLocation() // useLocation -> sirve para obtener la ubicación actual de la aplicación
 
-  const { carid } = useParams() // useParams -> sirve para obtener los parámetros de la url -> /car/:carid -> carid es el parámetro
+  const { carid, id } = useParams() // useParams -> sirve para obtener los parámetros de la url -> /car/:carid -> carid es el parámetro
+
+  console.log('carid', carid);
 
   const { cards, addCardStore } = useApp() // useApp -> es un custom HOOK que sirve para obtener el contexto de la aplicación
 
@@ -26,14 +28,24 @@ function CarId() {
     window.location.href = '/carrito'
   }
 
+  const [price, setPrice] = useState(`${car.price}`);
+
+  useEffect(() => {
+    const formatter = new Intl.NumberFormat("es-ES", {
+      style: "currency",
+      currency: "EUR",
+    });
+    setPrice(formatter.format(car.price));
+  }, []);
+
   return (
     <Layout>
       <div className='container m-auto p-3'>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 lg:mb-5' >
-          <div className=''>
+          <div className='aspect-video overflow-hidden'>
             <Slider images={car?.images ?? [car.img]} />
           </div>
-          <div className='bg-paletter-bluesecond p-3 rounded-md text-white mb-3 lg:mb-0'>
+          <div className='bg-[#43435e] p-3 rounded-md text-white mb-3 lg:mb-0'>
             <ul className=''>
               <li className='border-2 border-white/20 p-1'>
                 <span className='font-bold'>Modelo</span>:
@@ -42,15 +54,14 @@ function CarId() {
               <li className='border-2 border-white/20 p-1'><span className='font-bold'>Marca</span>: {car?.brand ?? "Sin Espesificación"}</li>
               <li className='border-2 border-white/20 p-1'><span className='font-bold'>Año</span>: {car?.year ?? "Sin Espesificación"}</li>
               <li className='border-2 border-white/20 p-1'><span className='font-bold'>Color</span>: {car?.color ?? "Sin Espesificación"}</li>
-              <li className='border-2 border-white/20 p-1'><span className='font-bold'>Precio</span>: {car?.price}</li>
+              <li className='border-2 border-white/20 p-1'><span className='font-bold'>Precio</span>: {price}</li>
               <li className='border-2 border-white/20 p-1'><span className='font-bold'>Kilometros</span>: {car?.km ?? "Sin espesificacion"}</li>
-              <li className='border-2 border-white/20 p-1'><span className='font-bold'>Año</span>: {car?.year ?? "Sin espesificacion"}</li>
               <li className='border-2 border-white/20 p-1'><span className='font-bold'>Potencia</span>: {car?.cv ?? "Sin espesificacion"}</li>
               <li className='border-2 border-white/20 p-1'><span className='font-bold'>Modificaciones</span>: {car?.modif ?? "Sin espesificacion"}</li>
             </ul>
           </div>
         </div>
-        <div className='bg-paletter-bluesecond p-3 rounded-md text-white/70'>
+        <div className='bg-[#43435e] p-3 rounded-md text-white/70'>
           <p className='text-xl font-bold mb-3'>Informacion</p>
           {car?.info ?? "Sin Espesificación"}
         </div>

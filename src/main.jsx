@@ -27,7 +27,7 @@ const router = createHashRouter([
     element: <Catalogo />
   },
   {
-    path: '/catalogo/:id',
+    path: '/catalogo/:carid',
     element: <CarId />
   },
   {
