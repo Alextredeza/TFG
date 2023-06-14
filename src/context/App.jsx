@@ -1,6 +1,7 @@
 import { createContext, useState } from 'react'
 import { useLocalStorage } from '../hooks/useLocalStorage'
-import data from '../db/cars.json'
+import carsDB from '../db/cars.json'
+import CarsStore from '../store/Cars'
 
 const UserLoginData = {
     name: 'Jorge',
@@ -39,6 +40,7 @@ const AppProvaider = ({ children }) => {
         saveData: saveLocalStorage,
     } = useLocalStorage('cartStore', [])
 
+    const data = CarsStore((state) => state.cards)
     const [cards, setCards] = useState(data)
     const [filters, setFilters] = useState([])
     const [staff, setStaff] = useState(Plantilla)
