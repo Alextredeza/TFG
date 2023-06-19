@@ -8,6 +8,7 @@ const CarsStore = create(
             cards: Cards,
             addCar: (car) => set((state) => ({ cards: [...state.cards, car] })),
             removeCar: (id) => set((state) => ({ cards: state.cards.filter((car) => car.id !== id) })),
+            setCars: (cars) => set((state) => ({ cards: cars })),
         }),
         {
             name: 'cars-storage',

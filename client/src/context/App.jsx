@@ -1,7 +1,7 @@
-import { createContext, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import { useLocalStorage } from '../hooks/useLocalStorage'
-import carsDB from '../db/cars.json'
 import CarsStore from '../store/Cars'
+import axios from 'axios'
 
 const UserLoginData = {
     name: 'Jorge',
@@ -41,6 +41,19 @@ const AppProvaider = ({ children }) => {
     } = useLocalStorage('cartStore', [])
 
     const data = CarsStore((state) => state.cards)
+    const setCars = CarsStore((state) => state.setCars)
+
+    useEffect(() => {
+        axios.get('http://localhost:3000/api/cars')
+            .then((res) => {
+                setCars(res.data.data)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }, [data])
+
+
     const [cards, setCards] = useState(data)
     const [filters, setFilters] = useState([])
     const [staff, setStaff] = useState(Plantilla)
