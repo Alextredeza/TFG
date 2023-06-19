@@ -1,8 +1,10 @@
 import React from 'react'
 import Layout from '../components/Layouts/Layout'
+import CarStore from '../store/Cars'
 
 const Sell = () => {
 
+    let addCar = CarStore((state) => state.addCar)
     let [image, setImage] = React.useState(null)
     let [images, setImages] = React.useState(null)
 
@@ -13,7 +15,21 @@ const Sell = () => {
         </div>
 
     const handlerSubmit = (e) => {
+        e.preventDefault()
 
+        let car = {
+            brand: e.target.brand.value,
+            model: e.target.model.value,
+            year: e.target.year.value,
+            km: e.target.mileage.value,
+            price: e.target.price.value,
+            description: e.target.description.value,
+        }
+
+        let img = e.target.img.files[0] ?? null
+        let imgs = e.target.images.files
+
+        
     }
 
     return (
@@ -21,7 +37,7 @@ const Sell = () => {
             <div className='container m-auto p-3'>
                 <h1 className='text-3xl font-bold text-white text-center my-5'>Vende tu coche ahora mismo</h1>
                 <div>
-                    <form enctype="multipart/form-data">
+                    <form onSubmit={handlerSubmit} encType="multipart/form-data">
                         <LabelWrape title='Marca' id='brand' />
                         <LabelWrape title='Modelo' id='model' />
                         <LabelWrape title='Año' id='year' type='number' />

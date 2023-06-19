@@ -30,7 +30,7 @@ const Home = () => {
           >Productos destacados</h1>
         </div>
 
-        <div class='grid gap-3 grid-cols-responsive container m-auto mt-10 p-3'>
+        <div className='grid gap-3 grid-cols-responsive container m-auto mt-10 p-3'>
           {popular && popular.map((item, index) => <Card key={index} item={item} />)}
         </div>
       </div>
