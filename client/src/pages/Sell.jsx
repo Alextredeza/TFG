@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layouts/Layout'
 import CarStore from '../store/Cars'
+import axios from 'axios'
 
 const Sell = () => {
 
@@ -17,19 +18,17 @@ const Sell = () => {
     const handlerSubmit = (e) => {
         e.preventDefault()
 
-        let car = {
-            brand: e.target.brand.value,
-            model: e.target.model.value,
-            year: e.target.year.value,
-            km: e.target.mileage.value,
-            price: e.target.price.value,
-            description: e.target.description.value,
-        }
+        let formData = new FormData(e.target)
+        // formData.append('img', e.target.img.files[0])
+        // for (let i = 0; i < e.target.images.files.length; i++) {
+        //     formData.append('images', e.target.images.files[i])
+        // }
 
-        let img = e.target.img.files[0] ?? null
-        let imgs = e.target.images.files
-
-        
+        axios.post('http://localhost:3000/api/cars', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        }).catch(err => console.log(err))
     }
 
     return (
@@ -41,9 +40,9 @@ const Sell = () => {
                         <LabelWrape title='Marca' id='brand' />
                         <LabelWrape title='Modelo' id='model' />
                         <LabelWrape title='Año' id='year' type='number' />
-                        <LabelWrape title='Kilometraje' id='mileage' type='number' />
+                        <LabelWrape title='Kilometraje' id='km' type='number' />
                         <LabelWrape title='Precio' id='price' type='number' />
-                        <LabelWrape title='Descripción' id='description' type='textarea' />
+                        <LabelWrape title='Descripción' id='info' type='textarea' />
                         <div className='flex flex-col'>
                             <label className='font-bold text-2xl text-white/80 mb-1' htmlFor='img'>Portada</label>
                             <input name='img' id='img' className='bg-paletter-bluethird p-1 rounded-md text-white' type='file' accept='.jpg, .jpeg, .png'

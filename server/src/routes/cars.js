@@ -31,16 +31,20 @@ router.get("/:idCard", async (req, res) => {
     res.json({ status: true, data });
 });
 
-const cpUpload = multer({ storage }).fields([{ name: 'img', maxCount: 1 }, { name: 'images', maxCount: 8 }])
+const cpUpload = multer({ storage }).fields([{ name: 'img', maxCount: 1 }, { name: 'images', maxCount: 8,  }])
 router.post("/", cpUpload, async (req, res) => {
     const { body } = req;
 
+    console.log(req.files);
+
     if (req?.files?.img) {
-        body.img = `/imgs/${req.files.img[0].filename}`;
+        body.img = `http://localhost:3000/cdn/imgs/${req.files.img[0].filename}`;
     }
     if (req?.files?.images) {
-        body.images = req.files.images.map((file) => `/imgs/${file.filename}`).join(',');
+        body.images = req.files.images.map((file) => `http://localhost:3000/cdn/imgs/${file.filename}`).join(',');
     }
+
+    console.log(body);
 
     const data = await CarSQL.insert(body);
     res.json({ status: true, data });

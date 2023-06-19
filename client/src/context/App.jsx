@@ -51,7 +51,7 @@ const AppProvaider = ({ children }) => {
             .catch((err) => {
                 console.log(err)
             })
-    }, [data])
+    }, [])
 
 
     const [cards, setCards] = useState(data)
