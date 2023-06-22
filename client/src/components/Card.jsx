@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Card = ({ item }) => {
   const [price, setPrice] = useState(`${item.price}`);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const formatter = new Intl.NumberFormat("es-ES", {

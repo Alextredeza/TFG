@@ -5,7 +5,7 @@
 
 3. [x] Hacer que cuando hagas click en un vehículo del Home, este te lleve a la página de Detalles del Vehículo.
 
-4. [] Hacer que cuando en Detalles del Vehículo hagas click en Comprar, este te lleve a el carrito de compra.
+4. [x] Hacer que cuando en Detalles del Vehículo hagas click en Comprar, este te lleve a el carrito de compra.
 
 5. [] Quitar el apartado de Historial de Ventas, tanto donde aparezca en el codigo como la propia clase.
 

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const CardCatologo = ({ item, index, addCardStore }) => {
   const [price, setPrice] = useState(`${item.price}`);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const formatter = new Intl.NumberFormat("es-ES", {
@@ -38,7 +39,7 @@ const CardCatologo = ({ item, index, addCardStore }) => {
           <button
             onClick={() => {
               addCardStore(item);
-              window.location.href = "/carrito";
+              navigate("/carrito");
             }}
             className="bg-[#6c6996] px-2 py-1 rounded-md hover:opacity-50 cursor-pointe w-full mt-2"
           >
