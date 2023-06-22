@@ -16,8 +16,6 @@ const Slider = ({ images, className = 'h-[350px]' }) => {
         setCurrent(index)
     }
 
-    console.log({ imgs });
-
     return (
         <div className={className + ' relative group'}>
             <div

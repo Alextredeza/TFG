@@ -13,7 +13,7 @@ const Card = ({ item }) => {
   }, []);
 
   return (
-    <div className="bg-[#464f63] rounded-md overflow-hidden">
+    <Link to={`/catalogo/${item.id}`} className="bg-[#464f63] rounded-md overflow-hidden hover:scale-105 transition-all duration-200">
       <div className="overflow-hidden">
         <img className="aspect-video" src={item.img} alt="" />
       </div>
@@ -27,7 +27,7 @@ const Card = ({ item }) => {
           >{price}</button>
         </div>
       </div>
-    </div>
+    </Link>
   );
 
   return (

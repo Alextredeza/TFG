@@ -29,7 +29,7 @@ function Catalogo() {
             </div>
           </div>
 
-          <div className="grid grid-cols-responsive p-3 gap-3">
+          <div className="grid grid-cols-responsive p-3 gap-5">
             {/* Si search esta vacio y no hay filtro, mostrar las tarjetas */}
             {search === "" &&
               filters.length === 0 &&

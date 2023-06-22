@@ -42,8 +42,8 @@ function CarId() {
     <Layout>
       <div className='container m-auto p-3'>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 lg:mb-5' >
-          <div className='aspect-video overflow-hidden'>
-            <Slider images={car?.images ?? [car.img]} />
+          <div className='overflow-hidden'>
+            <Slider images={car?.images  ? car?.images.split(',') : [car.img]} className='aspect-video' />
           </div>
           <div className='bg-[#43435e] p-3 rounded-md text-white mb-3 lg:mb-0'>
             <ul className=''>

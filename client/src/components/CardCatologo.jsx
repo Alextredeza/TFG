@@ -14,7 +14,7 @@ const CardCatologo = ({ item, index, addCardStore }) => {
   }, []);
 
   return (
-    <div className="bg-[#464f63] rounded-md overflow-hidden">
+    <div className="bg-[#464f63] rounded-md overflow-hidden  hover:scale-105 transition-all duration-200">
       <div className="overflow-hidden">
         <img className="aspect-video" src={item.img} alt="" />
       </div>
