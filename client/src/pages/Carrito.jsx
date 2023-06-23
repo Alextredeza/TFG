@@ -3,10 +3,10 @@ import { useApp } from "../hooks/useApp";
 import { BiX } from "react-icons/bi";
 import Layout from "../components/Layouts/Layout";
 import { useLocalStorage } from "../hooks/useLocalStorage";
-import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Carrito() {
-  const location = useLocation();
+  const navigate = useNavigate();
 
   const { dataLocalStorage, removeCardStore } = useApp();
   const { saveData: saveDATA } = useLocalStorage("shop", false);
@@ -40,10 +40,21 @@ function Carrito() {
                 );
               })}
             </ul>
-            <p className="border-t mt-4">
-              Total:{" "}
-              {dataLocalStorage.reduce((acc, item) => acc + item.price, 0)}
-            </p>
+            <div className="border-t mt-4 flex items-center justify-between">
+              <p>
+                Total:{" "}
+                {dataLocalStorage.reduce((acc, item) => acc + item.price, 0)}
+              </p>
+              <button
+                onClick={() => {
+                  navigate("/shop");
+                  saveDATA(dataLocalStorage);
+                }}
+                className="bg-gray-700 text-white rounded-md p-1 mt-2"
+              >
+                Comprar
+              </button>
+            </div>
           </div>
           <div className="bg-[#242335] p-2 rounded-md text-white w-full lg:w-[calc(100vw_-_20rem)] h-fit">
             {dataLocalStorage.map((item, index) => {
@@ -52,25 +63,25 @@ function Carrito() {
                   key={index}
                   className="p-2 rounded-md w-full flex gap-2 relative h-14"
                 >
-                    <div className="aspect-video">
-                      <img
-                        src={item.img}
-                        alt="imagen de coche"
-                        className="rounded-md w-full"
-                      />
+                  <div className="aspect-video">
+                    <img
+                      src={item.img}
+                      alt="imagen de coche"
+                      className="rounded-md w-full"
+                    />
+                  </div>
+                  <div className="flex flex-col justify-center">
+                    <div>
+                      <p className="font-bold text-xl">
+                        {item.model} {item.brand}{" "}
+                      </p>
                     </div>
-                    <div className="flex flex-col justify-center">
-                      <div>
-                        <p className="font-bold text-xl">
-                          {item.model} {item.brand}{" "}
-                        </p>
-                      </div>
-                      <div>
-                        <p className="text-red-500 text-sm font-bold">
-                          € {item.price}
-                        </p>
-                      </div>
+                    <div>
+                      <p className="text-red-500 text-sm font-bold">
+                        € {item.price}
+                      </p>
                     </div>
+                  </div>
                   <button
                     onClick={() => {
                       removeCardStore(item.uuid);

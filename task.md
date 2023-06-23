@@ -7,7 +7,7 @@
 
 4. [x] Hacer que cuando en Detalles del Vehículo hagas click en Comprar, este te lleve a el carrito de compra.
 
-5. [] Quitar el apartado de Historial de Ventas, tanto donde aparezca en el codigo como la propia clase.
+5. [x] Quitar el apartado de Historial de Ventas, tanto donde aparezca en el codigo como la propia clase.
 
 6, [x] Intentar modificar el Carrito de compra para que sea mas atracativo, corregir distancias de las cajas...
 
@@ -16,7 +16,7 @@
 8. [x] Corregir que hay vehículos ne los que no aparecen las fotos en el apartado de Detalles Vehículo y además, igualar la foto a 
  el tamaño de la información de la derecha.
 
-9. [] En la página de Shop, cuando vas a seleccionar el concesionario, modificar la página para que se vea un poco mas atracativa, ya que es
+9. [x] En la página de Shop, cuando vas a seleccionar el concesionario, modificar la página para que se vea un poco mas atracativa, ya que es
  un lugar del mundo, añadir imagenes de google maps, una para el concesionario de cada ciudad.
 
 10. [x] Arreglar el apartado de la plantilla de trabajadores, añadiremos una foto de cada empleado y su función al lado, y abajo una breve 

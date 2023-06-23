@@ -16,6 +16,7 @@ import Register from "./pages/register"
 import NotFound from "./pages/NotFound"
 import Sell from "./pages/Sell"
 import Plantilla from "./pages/plantilla"
+import Navbar from './components/Layouts/NavBar'
 
 const router = createHashRouter([
   {
@@ -65,6 +66,10 @@ const router = createHashRouter([
   {
     path: '/Shop',
     element: <Shop />
+  },
+  {
+    path: '*',
+    element: <NotFound />
   }
 ])
 

@@ -44,7 +44,7 @@ const Navbar = () => {
         {
             name: 'Conócenos',
             path: '/curiosidades',
-            subMenu: [{ name: 'Nuestra historia', path: '/aboutus/history' }, { name: 'Historial de ventas', path: '/ventas' }, { name: 'Plantilla', path: '/plantilla' }]
+            subMenu: [{ name: 'Nuestra historia', path: '/aboutus/history' }, { name: 'Plantilla', path: '/plantilla' }]
         },
         // { name: 'Carrito', path: '/carrito' },
         // { name: 'Configuración', subMenu: [{ name: 'Ajustes', path: '/ajustes' }, { name: 'Cokies', path: '/iniciarsesion' }] },

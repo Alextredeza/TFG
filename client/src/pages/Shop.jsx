@@ -7,6 +7,8 @@ import { Navigate } from 'react-router-dom'
 function Shop() {
 
   const { data: login, loading } = useLocalStorage('loggin', false)
+  const [selectLocation, setSelectLocation] = React.useState('none')
+
   const {
     data: dataLocalStorage,
     saveData: saveLocalStorage,
@@ -95,14 +97,26 @@ function Shop() {
           )}
 
           {current === 1 && (
-            <form onSubmit={handlerSubmitSecond} className='bg-paletter-bluesecond p-3 rounded-md flex flex-col gap-4'>
-              <div className='flex flex-col'>
-                <label className='font-bold text-2xl text-white/80' htmlFor="">Selecciona el consecionario</label>
-                <select name="conces" id="conces">
-                  <option value="1">Calle benidorm (Barcelona)</option>
-                  <option value="2">Calle cuenca (Madrid)</option>
-                  <option value="3">Calle mimosas (Valencia)</option>
-                </select>
+            <form onSubmit={handlerSubmitSecond} className='bg-paletter-bluesecond p-3 rounded-md'>
+              <div className='grid grid-cols-responsive gap-5'>
+                <div className={`aspect-square bg-[url("https://media.architecturaldigest.com/photos/57ad893acfc37bc171ad8082/master/pass/madrid-travel-guide.jpg")] bg-center bg-no-repeat bg-cover bg-blend-overlay flex flex-col items-center justify-center text-white text-xl hover:font-bold bg-gray-900 cursor-pointer`} 
+                onClick={() => setSelectLocation("madrid")}
+                >
+                  <p>MADRID 
+
+                    {selectLocation == 'madrid' ? "✅" : ""}
+                  </p>
+                </div>
+                <div className={`aspect-square bg-[url("https://media.architecturaldigest.com/photos/57ad893acfc37bc171ad8082/master/pass/madrid-travel-guide.jpg")] bg-center bg-no-repeat bg-cover bg-blend-overlay bg-gray-900 flex flex-col items-center justify-center  text-white text-xl hover:font-bold cursor-pointer `} 
+                onClick={() => setSelectLocation("barcelona")}
+                >
+                  <p>barcelona {selectLocation == 'barcelona' ? "✅" : ""}</p>
+                </div>
+                <div className={`aspect-square bg-[url("https://media.architecturaldigest.com/photos/57ad893acfc37bc171ad8082/master/pass/madrid-travel-guide.jpg")] bg-center bg-no-repeat bg-cover bg-blend-overlay bg-gray-900 flex flex-col items-center justify-center text-white text-xl hover:font-bold cursor-pointer `} 
+                onClick={() => setSelectLocation("valencia")}
+                >
+                  <p>valencia {selectLocation == 'valencia' ? "✅" : ""}</p>
+                </div>
               </div>
               <button
                 className='bg-paletter-redlight text-white font-bold py-2 px-4 rounded mt-3 inline-block cursor-pointer hover:bg-paletter-red'
