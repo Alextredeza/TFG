@@ -19,7 +19,7 @@
 9. [] En la página de Shop, cuando vas a seleccionar el concesionario, modificar la página para que se vea un poco mas atracativa, ya que es
  un lugar del mundo, añadir imagenes de google maps, una para el concesionario de cada ciudad.
 
-10. [] Arreglar el apartado de la plantilla de trabajadores, añadiremos una foto de cada empleado y su función al lado, y abajo una breve 
+10. [x] Arreglar el apartado de la plantilla de trabajadores, añadiremos una foto de cada empleado y su función al lado, y abajo una breve 
  descripción de lo que hace.
 
 11, [] Corregir la ruta de Nuestra historia
