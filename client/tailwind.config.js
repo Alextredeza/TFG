@@ -12,7 +12,7 @@ export default {
       colors: {
         paletter: {
           blue: "#2B2D42",
-          bluesecond: "#5D618F",
+          bluesecond: "#242335",
           bluethird:"#33364F",
           gray: "#8D99AE",
           white: "#EDF2F4",

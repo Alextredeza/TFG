@@ -35,8 +35,6 @@ const cpUpload = multer({ storage }).fields([{ name: 'img', maxCount: 1 }, { nam
 router.post("/", cpUpload, async (req, res) => {
     const { body } = req;
 
-    console.log(req.files);
-
     if (req?.files?.img) {
         body.img = `http://localhost:3000/cdn/imgs/${req.files.img[0].filename}`;
     }
@@ -44,7 +42,6 @@ router.post("/", cpUpload, async (req, res) => {
         body.images = req.files.images.map((file) => `http://localhost:3000/cdn/imgs/${file.filename}`).join(',');
     }
 
-    console.log(body);
 
     const data = await CarSQL.insert(body);
     res.json({ status: true, data });

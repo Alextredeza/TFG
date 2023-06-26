@@ -40,7 +40,7 @@ const AppProvaider = ({ children }) => {
         saveData: saveLocalStorage,
     } = useLocalStorage('cartStore', [])
 
-    const data = CarsStore((state) => state.cards)
+    const cards = CarsStore((state) => state.cards)
     const setCars = CarsStore((state) => state.setCars)
 
     useEffect(() => {
@@ -54,7 +54,7 @@ const AppProvaider = ({ children }) => {
     }, [])
 
 
-    const [cards, setCards] = useState(data)
+    // const [cards, setCards] = useState(data)
     const [filters, setFilters] = useState([])
     const [staff, setStaff] = useState(Plantilla)
 
