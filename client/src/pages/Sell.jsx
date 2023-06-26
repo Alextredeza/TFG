@@ -41,8 +41,14 @@ const Sell = () => {
             km: "",
             price: "",
             info: "",
-            img: [],
-            images: "",
+            img: "",
+            images: [],
+            color: "",
+            doors: "",
+            cv: "",
+            modif: "",
+            combustible: "",
+            cambio: "",
           }}
           onSubmit={(values) => {
             let formData = new FormData();
@@ -53,7 +59,17 @@ const Sell = () => {
             formData.append("price", values.price);
             formData.append("info", values.info);
             formData.append("img", values.img);
-            formData.append("images", values.images);
+            formData.append("color", values.color);
+            formData.append("doors", values.doors);
+            formData.append("cv", values.cv);
+            formData.append("modif", values.modif);
+            formData.append("combustible", values.combustible);
+            formData.append("cambio", values.cambio);
+            
+            // values.images = array of files
+            for(let file of values.images) {
+              formData.append('images', file)
+            }
 
             axios
               .post("http://localhost:3000/api/cars", formData, {
@@ -63,7 +79,7 @@ const Sell = () => {
               })
               .then((res) => {
                 addCar(res.data.data);
-                navigate("/catalogo");
+                window.location.href = "/#/catalogo";
               })
               .catch((err) => console.log(err));
           }}
@@ -76,6 +92,12 @@ const Sell = () => {
                 <Input title="Año" id="year" type="number" />
                 <Input title="Kilometraje" id="km" type="number" />
                 <Input title="Precio" id="price" type="number" />
+                <Input title="Color" id="color" />
+                <Input title="Cambio" id="cambio" />
+                <Input title="Puertas" id="doors" type="number" />
+                <Input title="Combustible" id="combustible" />
+                <Input title="Potencia" id="cv" type="number" />
+                <Input title="Modificaciones" id="modif" />
                 <Input title="Descripción" id="info" type="textarea" />
                 <div className="flex flex-col">
                   <label
@@ -101,13 +123,14 @@ const Sell = () => {
                     className="font-bold text-2xl text-white/80 mb-1"
                     htmlFor="img"
                   >
-                    Portada
+                    Mas fotos
                   </label>
 
                   <input
                     title="Portada"
                     id="images"
                     type="file"
+                    multiple
                     className="bg-paletter-bluethird p-1 rounded-md text-white focus:outline-none"
                     onChange={(e) => {
                       setFieldValue("images", e.target.files);

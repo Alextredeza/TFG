@@ -20,8 +20,6 @@ function CarId() {
 
   const { carid, id } = useParams(); // useParams -> sirve para obtener los parámetros de la url -> /car/:carid -> carid es el parámetro
 
-  console.log("carid", carid);
-
   const { cards, addCardStore } = useApp(); // useApp -> es un custom HOOK que sirve para obtener el contexto de la aplicación
 
   // const { carid } = useParams() // estoy destructurando el objeto que me devuelve useParams() y obtengo el parámetro carid
@@ -44,6 +42,8 @@ function CarId() {
     });
     setPrice(formatter.format(car.price));
   }, []);
+
+  console.log(car);
 
   return (
     <Layout>
@@ -72,6 +72,18 @@ function CarId() {
               <li className="border-2 border-white/20 p-1">
                 <span className="font-bold">Color</span>:{" "}
                 {car?.color ?? "Sin Espesificación"}
+              </li>
+              <li className="border-2 border-white/20 p-1">
+                <span className="font-bold">Puertas</span>:{" "}
+                {car?.doors ?? "Sin Espesificación"}
+              </li>
+              <li className="border-2 border-white/20 p-1">
+                <span className="font-bold">Cambio</span>:{" "}
+                {car?.cambio ?? "Sin Espesificación"}
+              </li>
+              <li className="border-2 border-white/20 p-1">
+                <span className="font-bold">Combustible</span>:{" "}
+                {car?.combustible ?? "Sin Espesificación"}
               </li>
               <li className="border-2 border-white/20 p-1">
                 <span className="font-bold">Precio</span>: {price}

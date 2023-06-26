@@ -42,7 +42,6 @@ router.post("/", cpUpload, async (req, res) => {
         body.images = req.files.images.map((file) => `http://localhost:3000/cdn/imgs/${file.filename}`).join(',');
     }
 
-
     const data = await CarSQL.insert(body);
     res.json({ status: true, data });
 });

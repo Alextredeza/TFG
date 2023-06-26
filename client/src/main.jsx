@@ -36,7 +36,7 @@ const router = createHashRouter([
     element: <Login />
   },
   {
-    path: '/History',
+    path: '/aboutus/history',
     element: <History />
   },
   {

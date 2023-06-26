@@ -13,6 +13,7 @@ const Cars = {
 	price: 'INTEGER',
 	km: 'INTEGER',
 	year: 'INTEGER',
+	color: 'TEXT',
 	cambio: 'TEXT',
 	cv: 'INTEGER',
 	doors: 'INTEGER',

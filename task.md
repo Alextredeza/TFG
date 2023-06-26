@@ -1,7 +1,7 @@
 
 1. [x] Limpiar codigo y clases que no se utilicen.
 
-2. [] Añadir km, cv, marchas... al formulário de subir el vehículo y que cuando lo completes te aparezca un mensaje de completado.
+2. [x] Añadir km, cv, marchas... al formulário de subir el vehículo y que cuando lo completes te aparezca un mensaje de completado.
 
 3. [x] Hacer que cuando hagas click en un vehículo del Home, este te lleve a la página de Detalles del Vehículo.
 
